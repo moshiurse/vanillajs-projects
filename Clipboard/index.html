@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Text Copy Clipboard</title>
+    <style>
+        .noselect {
+            -webkit-touch-callout: none; /* iOS Safari */
+            -webkit-user-select: none; /* Safari */
+            -khtml-user-select: none; /* Konqueror HTML */
+            -moz-user-select: none; /* Old versions of Firefox */
+            -ms-user-select: none; /* Internet Explorer/Edge */
+            user-select: none; /* Non-prefixed version, currently supported by Chrome, Edge, Opera and Firefox */
+        }
+    </style>
+    <script src="app.JS"></script>
+</head>
+<body>
+
+    <h1>Text Copy To Clipboard</h1>
+
+    <input type="text" id="text-to-copy">
+    <button onclick="copy()">Copy</button>
+    <span id="success-msg"></span>
+    <br><br>
+
+    <span>select me selet me select me select me.  select me selet me select me select me.  select me selet me select me select me.  select me selet me select me select me.  select me selet me select me select me.  select me selet me select me select me. </span><br>
+
+    <button onclick="copySelectedText()">Select And Copy Text</button><br>
+    <span id="success-msg2"></span>
+
+    <p>
+        Selectable text.
+      </p>
+      <p class="noselect">
+        Not selectable text.
+      </p>
+    
+</body>
+</html>
