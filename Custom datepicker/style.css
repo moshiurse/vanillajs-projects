@@ -1,0 +1,36 @@
+.datepicker {
+    height: 30px;
+    width: 200px;
+}
+
+.picker-container {
+    width: 200px;
+    height: 250px;
+    border: 1px solid beige;
+    border-radius: 5px;
+    box-shadow: 2px 2px 5px aquamarine;
+    background-color: aquamarine;
+}
+
+.date-control {
+    display: flex;
+    justify-content: space-between;
+}
+
+.current {
+    width: 80%;
+    cursor: pointer;
+    text-align: center;
+}
+
+.current:hover,
+.prev:hover,
+.next:hover {
+    background-color: beige;
+}
+
+.week-list {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+}
