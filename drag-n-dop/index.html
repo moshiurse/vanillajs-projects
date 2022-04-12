@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Drag and Drop</title>
+    <link rel="icon" type="image/png" href="favicon.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <h1 class="main-title">Kanban Board</h1>
+
+    <div class="drag-container">
+        <ul class="drag-list">
+            <!-- Backlog -->
+            <li class="drag-column backlog-column">
+                <span class="header">
+                    <h1>Backlog</h1>
+                </span>
+
+                <div id="backlog-content" class="custom-scroll">
+                    <ul class="drag-item-list" id="backlog-list">
+                        <li class="drag-item">Testing data</li>
+                        <li class="drag-item">Testing data</li>
+                        <li class="drag-item">Testing data</li>
+                        <li class="drag-item">Testing data</li>
+                    </ul>
+                </div>
+
+                <div class="add-btn-group">
+                    <div class="add-btn">
+                        <span class="plus-sign">+</span>
+                        <span>Add Card</span>
+                    </div>
+                    <div class="add-btn solid">
+                        <span>Save Card</span>
+                    </div>
+                    <div class="add-container">
+                        <div class="add-item">
+                            
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <!-- Progress -->
+            <li class="drag-column progress-column">
+                <span class="header">
+                    <h1>Progress</h1>
+                </span>
+
+                <div id="progress-content" class="custom-scroll">
+                    <ul class="drag-item-list" id="progress-list">
+                        <li class="drag-item">Testing data</li>
+                        <li class="drag-item">Testing data</li>
+                        <li class="drag-item">Testing data</li>
+                        <li class="drag-item">Testing data</li>
+                    </ul>
+                </div>
+
+                <div class="add-btn-group">
+                    <div class="add-btn">
+                        <span class="plus-sign">+</span>
+                        <span>Add Card</span>
+                    </div>
+                    <div class="add-btn solid">
+                        <span>Save Card</span>
+                    </div>
+                    <div class="add-container">
+                        <div class="add-item">
+
+                        </div>
+                    </div>
+                </div>
+            </li>
+            
+            
+            <li class="drag-column complete-column">
+                <span class="header">
+                    <h1>Complete</h1>
+                </span>
+
+                <div id="complete-content" class="custom-scroll">
+                    <ul class="drag-item-list" id="complete-list">
+                        <li class="drag-item">Testing data</li>
+                        <li class="drag-item">Testing data</li>
+                        <li class="drag-item">Testing data</li>
+                        <li class="drag-item">Lorem ipsum dolor sit amet consectetur adipisicing elit. Non, tenetur nihil impedit adipisci ipsam placeat eaque dolorem! Iusto quas veniam repudiandae voluptatem, quisquam necessitatibus modi, nisi officia, fuga atque unde?Lorem ipsum dolor sit amet consectetur adipisicing elit. Doloremque laudantium facere dolores culpa suscipit excepturi? Provident sed tenetur eos, voluptas reiciendis, ea esse repellendus ducimus, ab tempora voluptates debitis! Repellendus?Lorem ipsum dolor sit amet consectetur adipisicing elit. Modi doloribus, debitis, eveniet tenetur numquam tempore, sed soluta incidunt dolores voluptas eligendi saepe veniam? Repudiandae beatae praesentium dolore et sapiente facilis!Loremlore Lorem ipsum, dolor sit amet consectetur adipisicing elit. Blanditiis ducimus repellendus quos repellat architecto quibusdam dolores delectus molestias? Delectus, aperiam adipisci? Laborum expedita praesentium possimus porro quaerat voluptatibus odit ducimus. Lorem ipsum dolor sit amet, consectetur adipisicing elit. Ut, quae. Quibusdam modi cupiditate, iusto vitae corporis laudantium! Id laudantium reiciendis sapiente, inventore officiis odit eveniet cupiditate ratione assumenda voluptates quam.</li>
+                    </ul>
+                </div>
+
+                <div class="add-btn-group">
+                    <div class="add-btn">
+                        <span class="plus-sign">+</span>
+                        <span>Add Card</span>
+                    </div>
+                    <div class="add-btn solid">
+                        <span>Save Card</span>
+                    </div>
+                    <div class="add-container">
+                        <div class="add-item">
+
+                        </div>
+                    </div>
+                </div>
+            </li>
+
+            <!-- On Hold -->
+            <li class="drag-column on-hold-column">
+                <span class="header">
+                    <h1>On Hold</h1>
+                </span>
+
+                <div id="on-hold-content" class="custom-scroll">
+                    <ul class="drag-item-list" id="on-hold-list">
+                        <li class="drag-item">Testing data</li>
+                        <li class="drag-item">Testing data</li>
+                        <li class="drag-item">Testing data</li>
+                        <li class="drag-item">Testing data</li>
+                    </ul>
+                </div>
+
+                <div class="add-btn-group">
+                    <div class="add-btn">
+                        <span class="plus-sign">+</span>
+                        <span>Add Card</span>
+                    </div>
+                    <div class="add-btn solid">
+                        <span>Save Card</span>
+                    </div>
+                    <div class="add-container">
+                        <div class="add-item">
+
+                        </div>
+                    </div>
+                </div>
+            </li>
+        </ul>
+    </div>
+    <!-- Script -->
+    <script src="script.js"></script>
+</body>
+</html>
