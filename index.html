@@ -1,0 +1,101 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Vanilla JS Projects</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 100vh;
+    background-color: #f4f4f4;
+  }
+
+  .projects-container {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+    /* max-width: 800px; */
+    padding: 10px;
+  }
+
+  .project-card {
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    max-width: 20%;
+    min-width: 15%;
+    cursor: pointer;
+    transition: transform 0.2s;
+  }
+
+  .project-card:hover {
+    transform: translateY(-5px);
+  }
+</style>
+</head>
+<body>
+<div class="projects-container">
+  <div class="project-card" onclick="navigateToProject('project1')">
+    <h2>Project 1</h2>
+    <p>Description of Project 1.</p>
+  </div>
+  <div class="project-card" onclick="navigateToProject('project2')">
+    <h2>Project 2</h2>
+    <p>Description of Project 2.</p>
+  </div>
+  <div class="project-card" onclick="navigateToProject('project3')">
+    <h2>Project 3</h2>
+    <p>Description of Project 3.</p>
+  </div>
+  <!-- Add more project cards as needed -->
+</div>
+
+<script>
+
+  const projectList = [
+    {name: 'Bettery Api', description: 'Checking Bettery api of web api', url: '/Bettery Api'},
+    {name: 'Clipboard', description: 'Copy pasting things you might like', url: '/Clipboard'},
+    {name: 'Custom Video Player', description: 'A custom video player created with HTML 5', url: '/Custom Video Player'},
+    {name: 'Deag n Drop', description: 'Kind of trello clone', url: '/drag-n-dop'},
+    {name: 'Exchange Converter', description: 'A currency exchange tool', url: '/Exchange Converter'},
+    {name: 'Expense Tracker', description: 'An expense tracker', url: 'Expense Tracker'},
+    {name: 'Form Validator', description: 'Form Validation', url: '/Form Validator'},
+    {name: 'Hangman Game', description: 'Find the secret word', url: '/Hangman Game'},
+    {name: 'Infinit Scroll', description: 'Scrolling functionality', url: '/Infinit Scroll'},
+    {name: 'Meal Finder', description: 'Get meal by search', url: '/Meal Finder'},
+    {name: 'Menu Slider Modal', description: 'Menu slider and modal design', url: '/Menu Slider Modal'},
+    {name: 'Movie Seat Booking', description: 'Book you favourite movie', url: '/Movie Seat Booking'}
+  ];
+
+
+
+
+
+  function renderProjects(projects) {
+    let html = ``;
+    projects.map(p => {
+      html += `<div class="project-card" onclick="navigateToProject('${p.url}')">
+          <h2>${p.name}</h2>
+          <p>${p.description}</p>
+        </div>`;
+    })
+
+    document.querySelector('.projects-container').innerHTML = html;
+  }
+
+  renderProjects(projectList);
+  function navigateToProject(url) {
+    // You can modify this function to actually navigate to the project's page
+    // For now, we're just showing an alert with the project name
+    window.open(url);
+  }
+</script>
+</body>
+</html>
