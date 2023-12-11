@@ -6,19 +6,23 @@
     <title>Custom inputs</title>
 
     <link rel="stylesheet" href="style.css">
+    
 </head>
 <body>
     
     <div class="container">
+        <h3>Input with floating label   </h3>
         <div class="entryarea">
-            <input type="text" required>
+            <input type="text" required class="floating">
             <div class="labelline">Enter your name</div>
         </div>
 
-        <!-- <div class="entryarea">
-            <input type="text" required>
-            <div class="labelline">Enter your name</div>
-        </div> -->
+        <h3>Password with show hide</h3>
+        <div class="floatingpass">
+            <input type="password" required id="pass">
+            <span>Password</span>
+            <div class="eye" onclick="showHide();"></div>
+        </div>
     </div>
 
     <script src="script.js"></script>

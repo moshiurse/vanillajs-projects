@@ -6,26 +6,27 @@
 }
 
 .container{
-    display: flex;
-    flex-direction: column;
+    height: 100vh;
 }
 
 .entryarea {
     position: relative;
     height: 50px;
     line-height: 50px;
-    margin-top: 50px;
+    margin-top: 20px;
+    margin-bottom: 10px;    
+    margin-left: 20px;
 }
 
-input {
+input.floating {
     position: absolute;
-    width: 500px;
+    width: 200px;
     outline: none;
-    font-size: 1.4em;
+    font-size: 1em;
     padding: 0 30px;
-    line-height: 50px;
+    line-height: 40px;
     border-radius: 10px;
-    border: 2px solid #5e695e;
+    border: 1px solid #e5e7eb;
     background: transparent;
     transition: 0.1s ease;
     z-index: 11111;
@@ -33,22 +34,22 @@ input {
 
 .labelline {
     position: absolute;
-    font-size: 1.6em;
+    font-size: .8em;
     color: #1b3de1;
     padding: 0 25px;
-    margin: 0 25px;
     background-color: transparent;
     transition: 0.2s ease;
+    margin-top: -3px;
 }
 
-input:focus,
-input:valid {
+input.floating:focus,
+input.floating:valid {
     color: green;
-    border: 3px solid #66ff00;
+    border: 2px solid #66ff00;
 }
 
-input:focus + .labelline,
-input:valid + .labelline {
+input.floating:focus + .labelline,
+input.floating:valid + .labelline {
     color: #66ff00;
     height: 30px;
     line-height: 30px;
@@ -56,4 +57,62 @@ input:valid + .labelline {
     z-index: 11111;
     background: #FFF;
     padding: 0 12px;
+    margin: 0 25px;
+}
+
+.floatingpass {
+    width: 250px;
+    position: relative;
+    height: 50px;
+    margin-top: 20px;
+    margin-bottom: 10px;    
+    margin-left: 20px;
+}
+
+.floatingpass #pass {
+    padding: 15px 20px;
+    outline: none;
+    border: 1px solid #120f0f40;
+    background: transparent;
+    border-radius: 5px;
+    font-size: 1em;
+}
+
+.floatingpass span {
+    position: absolute;
+    left: 0;
+    padding: 15px 20px;
+    pointer-events: none;
+    font-size: 1em;
+    transition: 0.5s;
+    text-transform: uppercase;
+    color: #120f0f40;
+    letter-spacing: 0.2em;
+}
+
+.floatingpass #pass:focus ~ span,
+.floatingpass #pass:valid ~ span  {
+    color: green;
+    font-size: 0.75em;
+    transform: translateX(9px) translateY(-7px);
+    background: #00dfc4;
+    padding: 0 5px;
+    border-radius: 2px;
+}
+
+.floatingpass .eye {
+    position: absolute;
+    top: 50%;
+    transform: translateY(-50%);
+    right: 20px;
+    background: url(show.svg);
+    background-size: cover;
+    width: 30px;
+    height: 30px;
+    cursor: pointer;
+}
+
+.floatingpass .eye.hide {
+    background: url(hide.svg);
+    background-size: cover;
 }
