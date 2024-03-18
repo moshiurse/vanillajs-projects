@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Custom inputs</title>
+
+    <link rel="stylesheet" href="style.css">
+    
+</head>
+<body>
+    
+    <div class="container">
+        <h3>Input with floating label   </h3>
+        <div class="entryarea">
+            <input type="text" required class="floating">
+            <div class="labelline">Enter your name</div>
+        </div>
+
+        <h3>Password with show hide</h3>
+        <div class="floatingpass">
+            <input type="password" required id="pass">
+            <span>Password</span>
+            <div class="eye" onclick="showHide();"></div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
