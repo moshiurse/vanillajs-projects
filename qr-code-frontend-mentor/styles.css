@@ -1,0 +1,40 @@
+body {
+    background: #F2F2F2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    width: 320px;
+    height: 497px;
+    border: none;
+    background-color: #FFF;
+    border-radius: 10px;
+}
+
+.container img {
+    padding: 16px;
+}
+
+.bold {
+    color: #1F314F;
+    font-size: 20px;
+    font-weight: 600;
+}
+
+.detail {
+    color: gray;
+    font-size: 16px;
+}
+
+.container > div {
+    padding: 16px;
+    gap: 5px;
+    display: flex;
+    flex-direction: column;
+}
