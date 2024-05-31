@@ -9,6 +9,19 @@
     height: 100vh;
 }
 
+.wrapper{
+    margin: 20px 0px 10px 20px;
+}
+
+input{
+    height: 50px;
+    outline: none;
+    border-radius: 5px;
+    border: 1px solid #120f0f40;
+    width: 250px;
+    padding: 0 20px;
+}
+
 .entryarea {
     position: relative;
     height: 50px;
@@ -115,4 +128,26 @@ input.floating:valid + .labelline {
 .floatingpass .eye.hide {
     background: url(hide.svg);
     background-size: cover;
+}
+
+.disabled-input input:disabled {
+    font-size: 1em;
+    font-weight: bold;
+}
+
+.readonly{
+    position: relative;
+}
+.readonly input:focus {
+    border: 2px solid #66ff00;
+    transition: 0.2s ease;
+}
+
+.readonly span {
+    position: absolute;
+    left: 3%;
+    top: -7px;
+    background-color: #66ff00;
+    padding: 0 5px;
+    font-weight: bold;
 }

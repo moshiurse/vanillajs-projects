@@ -12,16 +12,54 @@
     
     <div class="container">
         <h3>Input with floating label   </h3>
-        <div class="entryarea">
+        <div class="entryarea wrapper">
             <input type="text" required class="floating">
-            <div class="labelline">Enter your name</div>
+            <span class="labelline">Enter your name</span>
         </div>
 
         <h3>Password with show hide</h3>
-        <div class="floatingpass">
+        <div class="floatingpass wrapper">
             <input type="password" required id="pass">
             <span>Password</span>
             <div class="eye" onclick="showHide();"></div>
+        </div>
+
+        <h3>Disabled input</h3>
+        <div class="disabled-input wrapper">
+            <input type="text" required disabled value="Some value">
+        </div>
+
+        <h3>Readonly input</h3>
+        <div class="readonly wrapper">
+            <input type="text" required readonly value="Some value">
+            <span>Readonly</span>
+        </div>
+
+        <h3>Number input</h3>
+        <div class="numberonly entryarea wrapper">
+            <input class="floating" type="number" required  value="1">
+            <span class="labelline">Number</span>
+        </div>
+
+        <h3>Input with bottom border</h3>
+        <!-- https://codepen.io/lucasyem/pen/ZEEYKdj -->
+        <div class="numberonly entryarea wrapper">
+            <input class="floating" type="number" required  value="1">
+            <span class="labelline">Number</span>
+        </div>
+
+        <h3>Input with Prefix suffix</h3>
+        <!-- https://codepen.io/aaroniker/pen/dybMVMB -->
+        <div class="numberonly entryarea wrapper">
+            <input class="floating" type="number" required  value="1">
+            <span class="labelline">Number</span>
+        </div>
+
+        <h3>Input with clear action</h3>
+        <!-- https://codepen.io/aaroniker/pen/dybMVMB -->
+        <div class="numberonly entryarea wrapper">
+            <input class="floating" type="number" required  value="1">
+            <span class="labelline">Number</span>
         </div>
     </div>
 
