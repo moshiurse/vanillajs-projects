@@ -1,0 +1,111 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>OTP Example</title>
+
+    <style>
+        .flex{
+            display: flex;
+        }
+        .justify-center{
+            justify-content: center;
+        }
+        .items-center{
+            align-items: center;
+        }
+        .flex-col{
+            flex-direction: column;
+        }
+        .gap-2{
+            gap: .5em;
+        }
+        .w-screen{
+            width: 100vw;
+        }
+        .h-screen{
+            height: 100vh;
+        }
+
+        .otp-input{
+            width: 12px;
+            height: 36px;
+            padding: 0px 12px;
+            font-size: 20px;
+            border: 2px solid gray;
+            caret-color: transparent;
+            cursor: text;
+            outline: none;
+            border-radius: 5px;
+            -moz-appearance: textfield;
+
+        }
+
+        .otp-input:focus {
+            border: 2px solid rgb(224, 206, 147);
+        }
+
+        .otp-input::-webkit-outer-spin-button,
+        .otp-input::-webkit-inner-spin-button{
+            -webkit-appearance: none;
+            margin: 0;
+        }
+
+    </style>
+</head>
+<body>
+
+    <div class="flex justify-center items-center h-screen w-screen gap-2">
+        <input min="0" max="9" tabindex="1" type="number" name="" class="otp-input" data-index="1" oninput="inputOtp(event)" onkeydown="handleBackspace(event)">
+        <input min="0" max="9" tabindex="2" type="number" name="" class="otp-input" data-index="2" oninput="inputOtp(event)" onkeydown="handleBackspace(event)">
+        <input min="0" max="9" tabindex="3" type="number" name="" class="otp-input" data-index="3" oninput="inputOtp(event)" onkeydown="handleBackspace(event)">
+        <input min="0" max="9" tabindex="4" type="number" name="" class="otp-input" data-index="4" oninput="inputOtp(event)" onkeydown="handleBackspace(event)">
+        <input min="0" max="9" tabindex="5" type="number" name="" class="otp-input" data-index="5" oninput="inputOtp(event)" onkeydown="handleBackspace(event)">
+        <input min="0" max="9" tabindex="6" type="number" name="" class="otp-input" data-index="6" oninput="inputOtp(event)" onkeydown="handleBackspace(event)">
+    </div>
+    
+</body>
+</html>
+
+<script>
+    console.log('OTPPPPPPPPPPPPPPP');
+
+    function inputOtp(e) {
+        console.log(e);
+        let target = e.target;
+        let value = target.value.split("").pop();
+        e.target.value = value;
+        let tabIndex = parseInt(target.attributes.getNamedItem('tabindex').nodeValue);
+        const nextInput = document.querySelector(`input.otp-input[tabindex="${tabIndex + 1}"]`);
+        if (nextInput && value) {
+            nextInput.focus();
+        }
+    }
+
+    function handleBackspace(event) {
+        console.log('Back', event.key);
+        const inputElement = event.target;
+
+        const currentTabIndex = parseInt(inputElement.getAttribute('tabindex'), 10);
+        const previousInput = document.querySelector(`input.otp-input[tabindex="${currentTabIndex - 1}"]`);
+        const nextInput = document.querySelector(`input.otp-input[tabindex="${currentTabIndex + 1}"]`);
+
+        if (event.key === 'Backspace' && event.target.value === '') {
+            if (previousInput) {
+                previousInput.focus();
+            }
+        }
+        if(event.key === 'ArrowRight'){
+            if (nextInput) {
+                nextInput.focus();
+            }
+        }
+
+        if(event.key === 'ArrowLeft'){
+            if (previousInput) {
+                previousInput.focus();
+            }
+        }
+}
+</script>
