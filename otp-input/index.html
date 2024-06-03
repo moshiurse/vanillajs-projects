@@ -69,10 +69,13 @@
 </html>
 
 <script>
-    console.log('OTPPPPPPPPPPPPPPP');
+    
+    let firstInput = document.querySelector(`input.otp-input[tabindex="1"]`);
+    if(firstInput){
+        firstInput.focus();
+    }
 
     function inputOtp(e) {
-        console.log(e);
         let target = e.target;
         let value = target.value.split("").pop();
         e.target.value = value;
@@ -84,7 +87,6 @@
     }
 
     function handleBackspace(event) {
-        console.log('Back', event.key);
         const inputElement = event.target;
 
         const currentTabIndex = parseInt(inputElement.getAttribute('tabindex'), 10);
