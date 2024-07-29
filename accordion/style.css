@@ -1,0 +1,28 @@
+.accordion-container{
+    display: flex;
+    flex-direction: column;
+    gap: 5px;
+}
+
+.item {
+    display: flex;
+    flex-direction: column;
+    padding: 10px 5px;
+    background-color: #e2e2e2;
+    border-radius: 6px;
+    cursor: pointer;
+}
+
+.item-header{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.item .item-content{
+    display: none;
+}
+
+.item.active .item-content{
+    display: block;
+}
