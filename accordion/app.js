@@ -19,7 +19,7 @@ function prepareAccordion() {
         html += `<div class="item active">
         <div class="item-header">
             <h3 class="item-title">${d.title}</h3>
-            <span class="toggle-icon">+</span>
+            <span class="toggle-icon"><i class="fa-solid fa-truck-fast"></i></span>
         </div>
             <div class="item-content">${d.desc}</div>
         </div>`
