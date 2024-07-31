@@ -5,9 +5,11 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const saveButton = document.getElementById('saveButton');
     const downloadButton = document.getElementById('downloadButton');
     const colorPicker = document.getElementById('colorPicker');
+    const toggleEraserButton = document.getElementById('toggleEraserButton');
     const previewContainer = document.getElementById('previewContainer');
     let isDrawing = false;
     let hasSigned = false;
+    let isEraser = false;
     let drawnLength = 0;
     const minDrawLength = 50; // Minimum length to consider it a valid signature
   
@@ -26,6 +28,16 @@ document.addEventListener('DOMContentLoaded', (event) => {
   
     const draw = (e) => {
       if (isDrawing) {
+
+        if (isEraser) {
+          context.globalCompositeOperation = 'destination-out';
+          context.lineWidth = 10;  // Increase line width for eraser
+        } else {
+          context.globalCompositeOperation = 'source-over';
+          context.lineWidth = 5;  // Reset line width for pen
+        }
+
+
         context.lineTo(e.offsetX, e.offsetY);
         context.stroke();
   
@@ -88,6 +100,19 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const changeColor = (e) => {
         context.strokeStyle = e.target.value;
     };
+
+    const toggleEraser = () => {
+      isEraser = !isEraser;
+      if (isEraser) {
+        context.strokeStyle = '#ffffff';  // Set eraser color to white
+        context.lineWidth = 10;  // Increase line width for eraser
+        toggleEraserButton.textContent = 'Pen';
+      } else {
+        context.strokeStyle = colorPicker.value;
+        context.lineWidth = 5;  // Reset line width for pen
+        toggleEraserButton.textContent = 'Eraser';
+      }
+    };
     canvas.addEventListener('mousemove', draw);
     canvas.addEventListener('mouseup', stopDrawing);
     canvas.addEventListener('mouseleave', stopDrawing);
@@ -96,5 +121,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     saveButton.addEventListener('click', saveSignature);
     downloadButton.addEventListener('click', downloadSignature);
     colorPicker.addEventListener('input', changeColor);
+    toggleEraserButton.addEventListener('click', toggleEraser);
   });
   
