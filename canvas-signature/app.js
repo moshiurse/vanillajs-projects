@@ -5,6 +5,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
     const saveButton = document.getElementById('saveButton');
     const downloadButton = document.getElementById('downloadButton');
     const colorPicker = document.getElementById('colorPicker');
+    const lineWidth = document.getElementById('line');
     const toggleEraserButton = document.getElementById('toggleEraserButton');
     const previewContainer = document.getElementById('previewContainer');
     let isDrawing = false;
@@ -16,8 +17,6 @@ document.addEventListener('DOMContentLoaded', (event) => {
     canvas.width = canvas.offsetWidth;
     canvas.height = canvas.offsetHeight;
   
-    // Set the pen ink size
-    context.lineWidth = 5;
     context.strokeStyle = colorPicker.value;
   
     const startDrawing = (e) => {
@@ -34,7 +33,7 @@ document.addEventListener('DOMContentLoaded', (event) => {
           context.lineWidth = 10;  // Increase line width for eraser
         } else {
           context.globalCompositeOperation = 'source-over';
-          context.lineWidth = 5;  // Reset line width for pen
+          context.lineWidth = lineWidth.value;  // Reset line width for pen
         }
 
 
