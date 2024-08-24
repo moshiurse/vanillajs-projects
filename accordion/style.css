@@ -2,27 +2,39 @@
     display: flex;
     flex-direction: column;
     gap: 5px;
+    margin: 0px 40px;
 }
 
 .item {
     display: flex;
     flex-direction: column;
-    padding: 10px 5px;
-    background-color: #e2e2e2;
-    border-radius: 6px;
-    cursor: pointer;
+    /* padding: 10px 5px; */
 }
 
 .item-header{
     display: flex;
     justify-content: space-between;
     align-items: center;
+    cursor: pointer;
+    border: 1px solid black;
+    border-radius: 6px;
+    padding: 15px;
+}
+
+.item-header h3{
+    padding: 0;
+    margin: 0;
 }
 
 .item .item-content{
-    display: none;
+    height: 0;
+    opacity: 0;
+    position: relative;
+    transition: all 0.3s ease-in;
 }
 
 .item.active .item-content{
-    display: block;
+    height: auto;
+    opacity: 1;
+    padding: 15px;
 }
